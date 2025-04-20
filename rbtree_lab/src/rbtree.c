@@ -376,6 +376,19 @@ int rbtree_erase(rbtree *t, node_t *p) {
 
 int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
   // TODO: implement to_array
-  
+  child_rbtree_to_array(t, arr, n,n ,t->root); 
+  return 0;
+}
+
+
+int child_rbtree_to_array(const rbtree *t, key_t *arr, const size_t n ,size_t l, node_t *cur) {
+  // TODO: implement to_array
+  if (l<=n || cur == t->nil){
+    return 0;
+  }
+  arr[l] = cur->key;
+  child_rbtree_to_array(t, arr, n, l-1 ,cur->left); 
+  child_rbtree_to_array(t, arr, n,l-2 ,cur->right);
+
   return 0;
 }
