@@ -16,7 +16,8 @@ int main(int argc, char *argv[]) {
     printf("7: 레드블랙 트리 삭제\n");
     printf("0: 종료\n");
     while (c != 0)
-    {
+    {   
+        printf("(0.종료 1.삽입 2.검색 3.삭제 4.최소값 5.최대값 6.트리출력 7.트리삭제)\n");
         printf("명령어를 입력하세요: ");
         scanf("%d", &c);
         switch (c)
